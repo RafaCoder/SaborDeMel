@@ -1,4 +1,4 @@
-package io.github.lucasvenez.ormclass.dao;
+package io.github.sabordemel.dao;
 
 import java.util.List;
 

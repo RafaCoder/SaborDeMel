@@ -1,12 +1,12 @@
-package io.github.lucasvenez.ormclass.dao;
+package io.github.sabordemel.dao;
 
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Query;
 
-import io.github.lucasvenez.ormclass.model.Order;
-import io.github.lucasvenez.ormclass.model.OrderItem;
+import io.github.sabordemel.model.Order;
+import io.github.sabordemel.model.OrderItem;
 
 public class OrderDAO extends DAO<Order> {
 

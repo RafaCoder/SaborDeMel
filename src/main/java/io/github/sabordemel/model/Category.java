@@ -1,4 +1,4 @@
-package io.github.lucasvenez.ormclass.model;
+package io.github.sabordemel.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

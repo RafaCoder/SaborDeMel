@@ -1,4 +1,4 @@
-package io.github.lucasvenez.dao;
+package io.github.sabordemel.dao;
 
 import static org.junit.Assert.assertTrue;
 
@@ -9,15 +9,15 @@ import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
-import io.github.lucasvenez.ormclass.dao.OrderDAO;
-import io.github.lucasvenez.ormclass.model.Category;
-import io.github.lucasvenez.ormclass.model.City;
-import io.github.lucasvenez.ormclass.model.Country;
-import io.github.lucasvenez.ormclass.model.Order;
-import io.github.lucasvenez.ormclass.model.OrderItem;
-import io.github.lucasvenez.ormclass.model.Person;
-import io.github.lucasvenez.ormclass.model.Product;
-import io.github.lucasvenez.ormclass.model.State;
+import io.github.sabordemel.dao.OrderDAO;
+import io.github.sabordemel.model.Category;
+import io.github.sabordemel.model.City;
+import io.github.sabordemel.model.Country;
+import io.github.sabordemel.model.Order;
+import io.github.sabordemel.model.OrderItem;
+import io.github.sabordemel.model.Person;
+import io.github.sabordemel.model.Product;
+import io.github.sabordemel.model.State;
 
 public class OrderDAOTest {
 

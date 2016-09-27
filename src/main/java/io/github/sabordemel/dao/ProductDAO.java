@@ -1,8 +1,8 @@
-package io.github.lucasvenez.ormclass.dao;
-
-import io.github.lucasvenez.ormclass.model.Product;
+package io.github.sabordemel.dao;
 
 import java.util.List;
+
+import io.github.sabordemel.model.Product;
 
 public class ProductDAO extends DAO<Product> {
 
