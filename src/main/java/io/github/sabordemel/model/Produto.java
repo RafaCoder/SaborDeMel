@@ -5,11 +5,19 @@
  */
 package io.github.sabordemel.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author dhiego.balthazar
  */
-public class Produto {
+
+@Entity
+@Table
+public class Produto implements Serializable{
 
     private Long idProduto;
     private String descricao;

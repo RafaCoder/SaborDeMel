@@ -5,15 +5,21 @@
  */
 package io.github.sabordemel.model;
 
-import br.sabordemel.model.agregados.ItemVenda;
+import java.io.Serializable;
 import java.util.ArrayList;
-import br.sabordemel.model.agregados.FormaDePagamento;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *
  * @author dhiego.balthazar
  */
-public class Venda {
+
+@Entity
+@Table
+public class Venda implements Serializable{
+	
 	private Long idVenda;
 	private ArrayList<ItemVenda> itens;
 	private Double valorTotal;

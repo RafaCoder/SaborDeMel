@@ -5,35 +5,33 @@
  */
 package io.github.sabordemel.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import br.sabordemel.model.agregados.Documento;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
 
 /**
  *
  * @author dhiego.balthazar
  */
-public class Funcionario extends Pessoa {
+
+@Entity
+@Table
+public class Funcionario extends Pessoa implements Serializable{
 
     private Long idFuncionario;
     private String nomeUsuario;
     private String senha;
-    private ArrayList<Venda> vendas;
+    private List<Venda> vendas;
 
-    public Funcionario(
-            Long idPessoa,
-            String nome,
-            Documento documento,
-            String eMail,
-            String dataNascimento,
-            Long idFuncionario,
-            String nomeUsuario,
-            String senha) {
+    public Funcionario(){
         
-        super(idPessoa, nome, documento, eMail, dataNascimento);
         vendas = new ArrayList<Venda>();
-        this.idFuncionario = idFuncionario;
-        this.nomeUsuario = nomeUsuario;
-        this.senha = senha;
+        
     }
 
     public Long getIdFuncionario(){
@@ -60,7 +58,7 @@ public class Funcionario extends Pessoa {
         this.senha = senha;
     }
 
-    public ArrayList<Venda> getVendas() {
+    public List<Venda> getVendas() {
         return vendas;
     }
     

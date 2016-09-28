@@ -5,21 +5,29 @@
  */
 package io.github.sabordemel.model;
 
-import br.sabordemel.model.entidades.Produto;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
 
 /**
  *
  * @author Dhiego
  */
-public class ItemVenda  {
-    private Long idItemVenda;
+
+@Entity
+@Table
+public class ItemVenda  implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7172607775014864856L;
+	private Long idItemVenda;
     private Produto produto;
     private Integer quantidade;
-    
-    public ItemVenda(Long idItemVenda, Integer quantidade){
-        this.idItemVenda = idItemVenda;
-        this.quantidade = quantidade;
-    }
+   
 
     public Long getIdItemVenda() {
         return idItemVenda;

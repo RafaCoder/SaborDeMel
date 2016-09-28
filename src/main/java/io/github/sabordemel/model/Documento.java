@@ -9,15 +9,19 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author dhiego.balthazar
  */
+@Entity
+@Table
 public class Documento implements Serializable{
 	
 	
@@ -29,19 +33,19 @@ public class Documento implements Serializable{
 	@Id
 	@Column
 	@GeneratedValue
-	private Integer idDocumento;
+	private Long idDocumento;
 	
+	@Column
 	private TipoDocumento tipoDocumento;
+	
+	@Column
 	private String numero;
 
-	public Documento() {
-	}
-
-	public Integer getIdDocumento() {
+	public Long getIdDocumento() {
 		return idDocumento;
 	}
 
-	public void setIdDocumento(Integer idDocumento) {
+	public void setIdDocumento(Long idDocumento) {
 		this.idDocumento = idDocumento;
 	}
 

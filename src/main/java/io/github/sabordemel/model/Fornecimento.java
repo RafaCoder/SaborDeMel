@@ -5,15 +5,36 @@
  */
 package io.github.sabordemel.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import br.sabordemel.model.agregados.ItemFornecimento;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author dhiego.balthazar
  */
-public class Fornecimento {
-    private Long idFornecimento;
+
+@Entity
+@Table
+public class Fornecimento implements Serializable{
+	
+	
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5708677461255185358L;
+	
+	@Id
+	@Column
+	@GeneratedValue
+	private Long idFornecimento;
+	
+	
     private Fornecedor fornecedor;
     private String dataFornecimento;
     private ArrayList<ItemFornecimento> itens;

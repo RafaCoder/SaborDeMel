@@ -8,29 +8,36 @@ package io.github.sabordemel.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author a1655086
  */
-public class Cliente extends Pessoa implements Serializable {
+@Entity
+@Table
+public class Cliente extends Pessoa implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3350502675686127051L;
 
 	@Id
 	@Column
 	@GeneratedValue
 	private Long idCliente;
+	
+	@OneToMany(mappedBy = "venda", targetEntity = Venda.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private ArrayList<Venda> compras;
-
-	public Cliente(Long idPessoa, String nome, Documento documento, String eMail, String dataNascimento,
-			Long idCliente) {
-
-		super(idPessoa, nome, documento, eMail, dataNascimento);
-
-		this.idCliente = idCliente;
-	}
 
 	public Long getIdCliente() {
 		return idCliente;

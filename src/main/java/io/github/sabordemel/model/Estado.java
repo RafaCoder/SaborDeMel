@@ -4,12 +4,17 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+
+@Entity
+@Table
 public class Estado implements Serializable{
 	
 	@Id
@@ -23,10 +28,6 @@ public class Estado implements Serializable{
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idPais", nullable = false)
 	private Pais pais;
-	
-	public Estado(){
-		
-	}
 
 	public Long getIdEstado() {
 		return idEstado;

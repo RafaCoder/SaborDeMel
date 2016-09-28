@@ -5,23 +5,25 @@
  */
 package io.github.sabordemel.model;
 
-import br.sabordemel.model.entidades.Pessoa;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
 
 /**
  *
  * @author dhiego.balthazar
  */
-public class Telefone {
+
+@Entity
+@Table
+public class Telefone implements Serializable{
 	private Long idTelefone;
 	private Pessoa pessoa;
 	private String ddd;
 	private String numero;
-	
-	public Telefone(Long idTelefone, String ddd, String numero){
-		this.idTelefone = idTelefone;
-		this.ddd = ddd;
-		this.numero = numero;
-	}
 
 	public Long getIdTelefone() {
 		return idTelefone;

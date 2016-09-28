@@ -5,46 +5,66 @@
  */
 package io.github.sabordemel.model;
 
-import br.sabordemel.model.agregados.Documento;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Dhiego
  */
-public class Fornecedor extends Pessoa{
-    
-    private Long idFornecedor;
-    private String nomeFantasia;
-    
-    public Fornecedor(
-            Long idPessoa,
-            String nome,
-            Documento documento,
-            String eMail,
-            String dataNascimento,
-            Long idFornecedor,
-            String nomeFantasia) {
-        
-        super(idPessoa, nome, documento, eMail, dataNascimento);
-        
-        this.idFornecedor = idFornecedor;
-        this.nomeFantasia = nomeFantasia;
-    }
 
-    public Long getIdFornecedor() {
-        return idFornecedor;
-    }
+@Entity
+@Table
+public class Fornecedor extends Pessoa implements Serializable{
 
-    public void setIdFornecedor(Long idFornecedor) {
-        this.idFornecedor = idFornecedor;
-    }
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4908170536274208091L;
+	
+	@Id
+	@Column
+	@GeneratedValue
+	private Long idFornecedor;
+	
+	@Column
+	private String nomeFantasia;
+	
+	@OneToMany(mappedBy = "fornecimento", targetEntity = Fornecimento.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Fornecimento> fornecimentos;
+	
+	public Fornecedor(){
+		fornecimentos = new ArrayList<Fornecimento>();
+	}
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
-    }
+	public Long getIdFornecedor() {
+		return idFornecedor;
+	}
 
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
-    }
-    
+	public void setIdFornecedor(Long idFornecedor) {
+		this.idFornecedor = idFornecedor;
+	}
+
+	public String getNomeFantasia() {
+		return nomeFantasia;
+	}
+
+	public void setNomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
+	}
+	
+	public List<Fornecimento> getFornecimentos(){
+		return fornecimentos;
+	}
+
 }

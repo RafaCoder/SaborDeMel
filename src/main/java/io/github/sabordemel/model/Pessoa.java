@@ -55,7 +55,7 @@ public class Pessoa implements Serializable {
 	@Column
 	private String eMail;
 
-	@OneToMany(mappedBy = "pessoa", targetEntity = Telefone.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "telefone", targetEntity = Telefone.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 
 	@OneToMany(mappedBy = "endereco", targetEntity = Telefone.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)

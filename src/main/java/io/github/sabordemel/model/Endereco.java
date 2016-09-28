@@ -9,17 +9,22 @@ import java.io.Serializable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author dhiego.balthazar
  */
+
+@Entity
+@Table
 public class Endereco implements Serializable {
 
 	/**
@@ -30,7 +35,7 @@ public class Endereco implements Serializable {
 	@Id
 	@Column
 	@GeneratedValue
-	private Integer idEndereco;
+	private Long idEndereco;
 
 	@OneToMany(mappedBy = "endereco", targetEntity = Pessoa.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Pessoa pessoa;
@@ -53,11 +58,11 @@ public class Endereco implements Serializable {
 	
 	public Endereco(){}
 
-	public Integer getIdEndereco() {
+	public Long getIdEndereco() {
 		return idEndereco;
 	}
 
-	public void setIdEndereco(Integer idEndereco) {
+	public void setIdEndereco(Long idEndereco) {
 		this.idEndereco = idEndereco;
 	}
 
